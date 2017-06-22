@@ -52,6 +52,8 @@ myApp.ig.getLocationsByCoords = function(lat, lng, distance) {
 			lng: lng,
 			distance: distance
 		}
+	}).fail(function() {
+		alert("Too many API calls to Instagram. Blocked.")
 	});
 }
 
@@ -65,6 +67,8 @@ myApp.ig.getMediaByLocationID = function(id) {
 			data: {
 				access_token: myApp.ig.accessToken,
 			}
+		}).fail(function() {
+			alert("Too many API calls to Instagram. Blocked.")
 		});
 	}
 }
@@ -74,6 +78,8 @@ myApp.ig.init = function()
 	myApp.ig.addFilterListener();
 	myApp.ig.addHashtagListener();
 	myApp.ig.addLocationListener();
+	alert(`Since Instagram's API is very limited, please only search Baldwin Village Toronto. (If your app is not live, Instagram only allows you to retrieve information on a few users who you invite to test your app in "sandbox mode". 
+		I have created a demo account with demo posts. Other places you could `);
 }
 
 myApp.google.init = function() 
